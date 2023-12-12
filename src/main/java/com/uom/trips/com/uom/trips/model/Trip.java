@@ -11,26 +11,15 @@ public class Trip {
 	//properties
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="Id")
-	private int id;
+	private int travelId;
 	
-	@Column(name="DepartureLocation")
-	private String deparurelocation;
-	
-	@Column(name="ArrivalLocation")
-	private String arrivallocation;
-	
-	@Column(name="DepartureDate")
-	private Date departuredate;
-	
-	@Column(name="ArrivalDate")
-	private Date arrivaldate;
-	
-	@Column(name="MaxLimit")
-	private int maxlimit;
-	
-	@Column(name="Agency")
-	private int agency;
+	@Column(name="departure_location")
+	private String departureLocation;
+	private String arrivalLocation;
+	private Date departureDate;
+	private Date arrivalDate;
+	private int maxLimit;
+	private int agencyId;
 	
 	
 	//Constructors
@@ -38,23 +27,23 @@ public class Trip {
 	
 	public Trip(int id, String dl, String al, Date dd, Date ad, int maxl, int a) {
 		
-		this.id = id;
-		deparurelocation = dl;
-		arrivallocation = al;
-		departuredate = dd;
-		arrivaldate = ad;
-		maxlimit = maxl;
-		agency = a;
+		travelId = id;
+		departureLocation = dl;
+		arrivalLocation = al;
+		departureDate = dd;
+		arrivalDate = ad;
+		maxLimit = maxl;
+		agencyId = a;
 	}
 	
 	//Getters
-	public int getId() {return id;}
-	public String getDeparurelocation() {return deparurelocation;}
-	public String getArrivallocation() {return arrivallocation;}
-	public Date getDeparturedate() {return departuredate;}
-	public Date getArrivaldate() {return arrivaldate;}
-	public int getMaxlimit() {return maxlimit;}
-	public int getAgency() {return agency;}
+	public int getTravelId() {return travelId;}
+	public String getDeparturelocation() {return departureLocation;}
+	public String getArrivallocation() {return arrivalLocation;}
+	public Date getDeparturedate() {return departureDate;}
+	public Date getArrivaldate() {return arrivalDate;}
+	public int getMaxlimit() {return maxLimit;}
+	public int getAgency() {return agencyId;}
 	
 	
 	
