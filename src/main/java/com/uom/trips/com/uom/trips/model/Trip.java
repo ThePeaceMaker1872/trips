@@ -8,12 +8,9 @@ import javax.persistence.*;
 @Table(name="trips")
 public class Trip {
 	
-	//properties
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int travelId;
-	
-	@Column(name="departure_location")
 	private String departureLocation;
 	private String arrivalLocation;
 	private Date departureDate;
@@ -25,27 +22,56 @@ public class Trip {
 	//Constructors
 	public Trip() {}
 	
-	public Trip(int id, String dl, String al, Date dd, Date ad, int maxl, int a) {
-		
-		travelId = id;
-		departureLocation = dl;
-		arrivalLocation = al;
-		departureDate = dd;
-		arrivalDate = ad;
-		maxLimit = maxl;
-		agencyId = a;
+	public Trip(int travelId, String departureLocation, String arrivalLocation, Date departureDate, Date arrivalDate,
+			int maxLimit, int agencyId) {
+		super();
+		this.travelId = travelId;
+		this.departureLocation = departureLocation;
+		this.arrivalLocation = arrivalLocation;
+		this.departureDate = departureDate;
+		this.arrivalDate = arrivalDate;
+		this.maxLimit = maxLimit;
+		this.agencyId = agencyId;
 	}
 	
 	//Getters
 	public int getTravelId() {return travelId;}
-	public String getDeparturelocation() {return departureLocation;}
-	public String getArrivallocation() {return arrivalLocation;}
-	public Date getDeparturedate() {return departureDate;}
-	public Date getArrivaldate() {return arrivalDate;}
-	public int getMaxlimit() {return maxLimit;}
-	public int getAgency() {return agencyId;}
+	public String getDepartureLocation() {return departureLocation;}
+	public String getArrivalLocation() {return arrivalLocation;}
+	public Date getDepartureDate() {return departureDate;}
+	public Date getArrivalDate() {return arrivalDate;}
+	public int getMaxLimit() {return maxLimit;}
+	public int getAgencyId() {return agencyId;}
 	
+	//Setters
+	public void setTravelId(int travelId) {
+		this.travelId = travelId;
+	}
 	
+	public void setDepartureLocation(String departureLocation) {
+		this.departureLocation = departureLocation;
+	}
+	
+	public void setArrivalLocation(String arrivalLocation) {
+		this.arrivalLocation = arrivalLocation;
+	}
+	
+	public void setDepartureDate(Date departureDate) {
+		this.departureDate = departureDate;
+	}
+	
+	public void setArrivalDate(Date arrivalDate) {
+		this.arrivalDate = arrivalDate;
+	}
+	
+	public void setMaxLimit(int maxLimit) {
+		this.maxLimit = maxLimit;
+	}
+	
+	public void setAgencyId(int agencyId) {
+		this.agencyId = agencyId;
+	}
+
 	
 
 }

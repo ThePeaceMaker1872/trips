@@ -1,17 +1,14 @@
 package com.uom.trips.controller;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.web.bind.annotation.*;
 
 import com.uom.trips.com.uom.trips.model.Trip;
 import com.uom.trips.service.TripService;
 
 import java.util.*;
-import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -31,6 +28,17 @@ public class TripController {
 		ts.addTrip(tr);
 	}
 	
+	@GetMapping(path="/getTripById")
+	public Optional<Trip> getTripById(@RequestBody Trip tr) throws Exception{
+		return ts.getTripById(tr);
+	}
+	
+	@GetMapping(path="/getTripsByArrivalLocation")
+	public Optional<Trip> getTripByArrivalLocation(@RequestBody Trip tr) throws Exception{
+		return ts.getTripsByArrivalLocation(tr);
+		
+		
+	}
 	
 
 }

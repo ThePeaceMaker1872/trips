@@ -1,12 +1,11 @@
 package com.uom.trips.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import java.util.*;
 import com.uom.trips.com.uom.trips.model.Trip;
 import com.uom.trips.tripsrepository.TripsRepository;
-import java.util.List;
-import java.util.Optional;
-import java.util.*;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 
 @Service
@@ -21,12 +20,16 @@ public class TripService {
 	}
 	
 	public void addTrip(Trip t) throws Exception {
-	    // Assuming that if travelId is 0, it's a new trip to be added
-	    if (t.getTravelId() == 0 || !tripsRepository.existsById(t.getTravelId())) {
-	        tripsRepository.save(t);
-	    } else {
-	        // Handle the case when a trip with the same ID already exists
-	        throw new Exception("Trip with ID " + t.getTravelId() + " already exists.");
-	    }
+	    tripsRepository.save(t);
 	}
+	
+	public Optional<Trip> getTripById(Trip t) throws Exception{
+		return tripsRepository.findById(t.getTravelId());
+	}
+	
+	public Optional<Trip> getTripsByArrivalLocation(Trip t) throws Exception{
+		return tripsRepository.findByArrivalLocation(t.getArrivalLocation());
+	}
+
+	
 }
