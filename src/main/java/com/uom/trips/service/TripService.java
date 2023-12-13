@@ -1,7 +1,8 @@
 package com.uom.trips.service;
 
 import java.util.*;
-import com.uom.trips.com.uom.trips.model.Trip;
+
+import com.uom.trips.model.Trip;
 import com.uom.trips.repository.TripsRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;

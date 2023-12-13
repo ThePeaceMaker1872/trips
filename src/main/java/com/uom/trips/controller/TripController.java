@@ -4,7 +4,7 @@ package com.uom.trips.controller;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
-import com.uom.trips.com.uom.trips.model.Trip;
+import com.uom.trips.model.Trip;
 import com.uom.trips.service.TripService;
 
 import java.util.*;

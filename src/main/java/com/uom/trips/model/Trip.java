@@ -1,4 +1,4 @@
-package com.uom.trips.com.uom.trips.model;
+package com.uom.trips.model;
 
 import java.sql.Date;
 import javax.persistence.*;
