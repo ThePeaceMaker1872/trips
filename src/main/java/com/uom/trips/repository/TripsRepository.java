@@ -1,4 +1,4 @@
-package com.uom.trips.tripsrepository;
+package com.uom.trips.repository;
 
 import java.util.*;
 
