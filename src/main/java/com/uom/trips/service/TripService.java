@@ -21,7 +21,7 @@ public class TripService {
 	}
 	
 	public void addTrip(Trip t) throws Exception {
-	    tripsRepository.save(t); 
+	    tripsRepository.save(t);
 	}
 	
 	public Optional<Trip> getTripById(Trip t) throws Exception{
