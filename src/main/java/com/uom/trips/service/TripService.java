@@ -3,7 +3,7 @@ package com.uom.trips.service;
 import java.util.*;
 
 import com.uom.trips.model.Trip;
-import com.uom.trips.repository.TripsRepository;
+import com.uom.trips.repository.TripRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,28 +13,29 @@ import org.springframework.stereotype.Service;
 public class TripService {
 	
 	@Autowired
-	private TripsRepository tripsRepository;
+	private TripRepository tripRepository;
 	
 	public List<Trip> getAllTrips() throws Exception{
-		return tripsRepository.findAll();
+		return tripRepository.findAll();
 		
 	}
 	
 	public void addTrip(Trip t) throws Exception {
-	    tripsRepository.save(t);
+		tripRepository.save(t);
 	}
 	
 	public Optional<Trip> getTripById(Trip t) throws Exception{
-		return tripsRepository.findById(t.getTravelId());
+		return tripRepository.findById(t.getTravelId());
 	}
 	
 	public Trip getTripById(int id) throws Exception{
-		return tripsRepository.findById(id).get(); 
+		return tripRepository.findById(id).get(); 
 	}
 	
 	public Optional<Trip> getTripsByArrivalLocation(Trip t) throws Exception{
-		return tripsRepository.findByArrivalLocation(t.getArrivalLocation());
+		return tripRepository.findByArrivalLocation(t.getArrivalLocation());
 	}
+	
 
 	
 }
