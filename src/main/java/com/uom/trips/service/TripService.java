@@ -28,6 +28,10 @@ public class TripService {
 		return tripsRepository.findById(t.getTravelId());
 	}
 	
+	/*public Trip getTripById(int id) throws Exception{
+		return tripsRepository.findById(id).get();
+	}*/
+	
 	public Optional<Trip> getTripsByArrivalLocation(Trip t) throws Exception{
 		return tripsRepository.findByArrivalLocation(t.getArrivalLocation());
 	}

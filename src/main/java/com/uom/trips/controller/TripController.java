@@ -16,26 +16,26 @@ import java.util.*;
 public class TripController {
 	
 	@Autowired
-	private TripService ts;
+	private TripService tripService;
 	
 	@GetMapping(path="/trips")
 	public List<Trip> getAllTrips() throws Exception{
-		return ts.getAllTrips();
+		return tripService.getAllTrips();
 	}
 	
 	@PostMapping(path="/addTrip")
-	public void addTrip(@RequestBody Trip tr) throws Exception{
-		ts.addTrip(tr);
+	public void addTrip(@RequestBody Trip trip) throws Exception{
+		tripService.addTrip(trip);
 	}
 	
 	@GetMapping(path="/getTripById")
-	public Optional<Trip> getTripById(@RequestBody Trip tr) throws Exception{
-		return ts.getTripById(tr);
+	public Optional<Trip> getTripById(@RequestBody Trip trip) throws Exception{
+		return tripService.getTripById(trip);
 	}
 	
 	@GetMapping(path="/getTripsByArrivalLocation")
-	public Optional<Trip> getTripByArrivalLocation(@RequestBody Trip tr) throws Exception{
-		return ts.getTripsByArrivalLocation(tr);
+	public Optional<Trip> getTripByArrivalLocation(@RequestBody Trip trip) throws Exception{
+		return tripService.getTripsByArrivalLocation(trip);
 		
 		
 	}
