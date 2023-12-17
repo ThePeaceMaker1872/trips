@@ -29,7 +29,7 @@ public class TripService {
 	}
 	
 	public Trip getTripById(int id) throws Exception{
-		return tripsRepository.findById(id).get();
+		return tripsRepository.findById(id).get(); 
 	}
 	
 	public Optional<Trip> getTripsByArrivalLocation(Trip t) throws Exception{
